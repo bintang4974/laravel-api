@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth:sanctum'])->group(function(){
     Route::get('/product', [ProductController::class, 'get']);
-    Route::post('/create', [ProductController::class, 'create']);
+    Route::post('/product/create', [ProductController::class, 'create']);
+    Route::get('/product/edit/{id}', [ProductController::class, 'edit']);
+    Route::post('/product/edit/{id}', [ProductController::class, 'update']);
     Route::get('/logout', [AuthController::class, 'logout']);
 });
 
